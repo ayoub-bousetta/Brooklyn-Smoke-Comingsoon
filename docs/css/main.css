@@ -143,8 +143,7 @@ html {
         body .warp.lp .container form .inputs,
         html .warp.lp .container form .inputs {
           margin-bottom: 20px;
-          font-size: 1rem;
-          background: #fff; }
+          font-size: 1rem; }
           body .warp.lp .container form .inputs label,
           html .warp.lp .container form .inputs label {
             color: #8a251b;
@@ -152,7 +151,7 @@ html {
             font-weight: 600;
             width: 100%;
             display: block;
-            background: #fff; }
+            margin-bottom: 8px; }
           body .warp.lp .container form .inputs input,
           html .warp.lp .container form .inputs input {
             line-height: 40px; }
