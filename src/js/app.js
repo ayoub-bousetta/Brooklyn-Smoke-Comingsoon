@@ -45,28 +45,36 @@ $(function () {
      //console.log(data);
 
 
-    $.ajax({
+
+
+
+     var request = $.ajax({
       type: 'POST',
       url: 'post.php',
       data: data,
-      success: function (response) {
-       // alert('form was submitted');
-     //   console.log(response);
+      datatype:   "json",
 
-        if (response=="Fine") {
-          alert.css({'background':'#00e700','display':'block'}).empty().html('Votre email a été bien envoyé');
-      $('#i-recaptcha')[0].reset();
-          
-        }else if(response=="NovalidKey"){
-          alert.css({'background':'#ff1500','display':'block'}).empty().html('reCaptcha clé non valide');
-
-        }else if(response=="NovalidCaptcha"){
-          alert.css({'background':'#ff1500','display':'block'}).empty().html('reCaptcha non valide');
-
-        }
-       
-      }
+     
     });
+
+    request.done(function(response) {
+
+       if (response) {
+         //console.log(response);
+         alert.css({'background':'#00e700','display':'block'}).empty().html('Votre email a été bien envoyé');
+     $('#i-recaptcha')[0].reset();
+         
+       }else if(response==false ){
+         alert.css({'background':'#ff1500','display':'block'}).empty().html('reCaptcha  ou clé non valide');
+
+       }
+
+
+
+    })
+
+   
+
 
   });
 
